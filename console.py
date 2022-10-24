@@ -124,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
             return
         new_instance = HBNBCommand.classes[args_list[0]]()
         for arg_index in range(1, len(args_list)):
-            key_value = split_args[arg_index].partition('=')
+            key_value = args_list[arg_index].partition('=')
             new_key = key_value[0]
             new_value = key_value[2]
             if '\"' in new_value:
