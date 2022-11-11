@@ -7,15 +7,21 @@ app = Flask(__name__)
 
 
 @app.route("/", strict_slashes=False)
-def hello():
-    """Method prints 'Hello HBNB!'"""
+def print_hello():
+    """method prints 'Hello HBNB!'"""
     return "Hello HBNB!"
 
 
 @app.route("/hbnb", strict_slashes=False)
-def hbnb():
-    """Method prints 'HBNB'"""
+def print_hbnb():
+    """method prints 'HBNB'"""
     return "HBNB"
+
+
+@app.route("/c/<text>", strict_slashes=False)
+def print_text_value(text):
+    """method prints C and value given"""
+    return "C {}".format(text.replace("_", " "))
 
 
 if __name__ == "__main__":
